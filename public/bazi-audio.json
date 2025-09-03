@@ -1,0 +1,989 @@
+[
+  {
+    "text": "Today's",
+    "startMs": 70,
+    "endMs": 680,
+    "timestampMs": 300,
+    "confidence": 0.97732
+  },
+  {
+    "text": " Bazzi",
+    "startMs": 680,
+    "endMs": 1160,
+    "timestampMs": 680,
+    "confidence": 0.362437
+  },
+  {
+    "text": " pillar",
+    "startMs": 1160,
+    "endMs": 1750,
+    "timestampMs": 1120,
+    "confidence": 0.854263
+  },
+  {
+    "text": " is",
+    "startMs": 1750,
+    "endMs": 1940,
+    "timestampMs": 1500,
+    "confidence": 0.997824
+  },
+  {
+    "text": " yang",
+    "startMs": 1940,
+    "endMs": 2340,
+    "timestampMs": 1720,
+    "confidence": 0.187824
+  },
+  {
+    "text": " water",
+    "startMs": 2340,
+    "endMs": 2820,
+    "timestampMs": 2180,
+    "confidence": 0.828805
+  },
+  {
+    "text": " over",
+    "startMs": 2820,
+    "endMs": 3270,
+    "timestampMs": 2600,
+    "confidence": 0.979626
+  },
+  {
+    "text": " rat.",
+    "startMs": 3270,
+    "endMs": 3880,
+    "timestampMs": 2980,
+    "confidence": 0.989391
+  },
+  {
+    "text": " Today's",
+    "startMs": 3880,
+    "endMs": 4330,
+    "timestampMs": 4160,
+    "confidence": 0.998041
+  },
+  {
+    "text": " energy",
+    "startMs": 4330,
+    "endMs": 4740,
+    "timestampMs": 4740,
+    "confidence": 0.991995
+  },
+  {
+    "text": " is",
+    "startMs": 4740,
+    "endMs": 4890,
+    "timestampMs": 5040,
+    "confidence": 0.99875
+  },
+  {
+    "text": " characterized",
+    "startMs": 4890,
+    "endMs": 5830,
+    "timestampMs": 5620,
+    "confidence": 0.998502
+  },
+  {
+    "text": " by",
+    "startMs": 5830,
+    "endMs": 5930,
+    "timestampMs": 5980,
+    "confidence": 0.985402
+  },
+  {
+    "text": " yang",
+    "startMs": 5930,
+    "endMs": 6240,
+    "timestampMs": 6160,
+    "confidence": 0.971341
+  },
+  {
+    "text": " water,",
+    "startMs": 6240,
+    "endMs": 6800,
+    "timestampMs": 6660,
+    "confidence": 0.98197
+  },
+  {
+    "text": " which",
+    "startMs": 6800,
+    "endMs": 7140,
+    "timestampMs": 7020,
+    "confidence": 0.999653
+  },
+  {
+    "text": " embodies",
+    "startMs": 7140,
+    "endMs": 7690,
+    "timestampMs": 7520,
+    "confidence": 0.997976
+  },
+  {
+    "text": " adaptability,",
+    "startMs": 7690,
+    "endMs": 8830,
+    "timestampMs": 7900,
+    "confidence": 0.997849
+  },
+  {
+    "text": " fluidity,",
+    "startMs": 8830,
+    "endMs": 9630,
+    "timestampMs": 9040,
+    "confidence": 0.982452
+  },
+  {
+    "text": " and",
+    "startMs": 9630,
+    "endMs": 9880,
+    "timestampMs": 9720,
+    "confidence": 0.840935
+  },
+  {
+    "text": " wisdom,",
+    "startMs": 9880,
+    "endMs": 10440,
+    "timestampMs": 10120,
+    "confidence": 0.999779
+  },
+  {
+    "text": " flowing",
+    "startMs": 10440,
+    "endMs": 11030,
+    "timestampMs": 10880,
+    "confidence": 0.997177
+  },
+  {
+    "text": " over",
+    "startMs": 11030,
+    "endMs": 11350,
+    "timestampMs": 11240,
+    "confidence": 0.999573
+  },
+  {
+    "text": " the",
+    "startMs": 11350,
+    "endMs": 11590,
+    "timestampMs": 11440,
+    "confidence": 0.999611
+  },
+  {
+    "text": " rat,",
+    "startMs": 11590,
+    "endMs": 12040,
+    "timestampMs": 11700,
+    "confidence": 0.997737
+  },
+  {
+    "text": " a",
+    "startMs": 12040,
+    "endMs": 12110,
+    "timestampMs": 12300,
+    "confidence": 0.999295
+  },
+  {
+    "text": " symbol",
+    "startMs": 12110,
+    "endMs": 12580,
+    "timestampMs": 12500,
+    "confidence": 0.999558
+  },
+  {
+    "text": " of",
+    "startMs": 12580,
+    "endMs": 12730,
+    "timestampMs": 12720,
+    "confidence": 0.999661
+  },
+  {
+    "text": " intelligence",
+    "startMs": 12730,
+    "endMs": 13670,
+    "timestampMs": 13340,
+    "confidence": 0.999081
+  },
+  {
+    "text": " and",
+    "startMs": 13670,
+    "endMs": 13900,
+    "timestampMs": 13720,
+    "confidence": 0.994681
+  },
+  {
+    "text": " resourcefulness.",
+    "startMs": 13900,
+    "endMs": 15360,
+    "timestampMs": 14080,
+    "confidence": 0.999805
+  },
+  {
+    "text": " This",
+    "startMs": 15360,
+    "endMs": 15640,
+    "timestampMs": 15600,
+    "confidence": 0.999417
+  },
+  {
+    "text": " combination",
+    "startMs": 15640,
+    "endMs": 16300,
+    "timestampMs": 16240,
+    "confidence": 0.999748
+  },
+  {
+    "text": " encourages",
+    "startMs": 16300,
+    "endMs": 16920,
+    "timestampMs": 16900,
+    "confidence": 0.999291
+  },
+  {
+    "text": " you",
+    "startMs": 16920,
+    "endMs": 17120,
+    "timestampMs": 17140,
+    "confidence": 0.996911
+  },
+  {
+    "text": " to",
+    "startMs": 17120,
+    "endMs": 17280,
+    "timestampMs": 17420,
+    "confidence": 0.748244
+  },
+  {
+    "text": " harness",
+    "startMs": 17280,
+    "endMs": 17760,
+    "timestampMs": 17660,
+    "confidence": 0.984624
+  },
+  {
+    "text": " your",
+    "startMs": 17760,
+    "endMs": 18080,
+    "timestampMs": 17980,
+    "confidence": 0.906591
+  },
+  {
+    "text": " creativity",
+    "startMs": 18080,
+    "endMs": 18800,
+    "timestampMs": 18680,
+    "confidence": 0.998247
+  },
+  {
+    "text": " and",
+    "startMs": 18800,
+    "endMs": 19030,
+    "timestampMs": 19040,
+    "confidence": 0.99987
+  },
+  {
+    "text": " communicate",
+    "startMs": 19030,
+    "endMs": 19820,
+    "timestampMs": 19580,
+    "confidence": 0.999443
+  },
+  {
+    "text": " effectively,",
+    "startMs": 19820,
+    "endMs": 20560,
+    "timestampMs": 20320,
+    "confidence": 0.99878
+  },
+  {
+    "text": " especially",
+    "startMs": 20560,
+    "endMs": 21320,
+    "timestampMs": 21100,
+    "confidence": 0.999725
+  },
+  {
+    "text": " in",
+    "startMs": 21320,
+    "endMs": 21470,
+    "timestampMs": 21380,
+    "confidence": 0.997714
+  },
+  {
+    "text": " collaborative",
+    "startMs": 21470,
+    "endMs": 22460,
+    "timestampMs": 21880,
+    "confidence": 0.999539
+  },
+  {
+    "text": " settings.",
+    "startMs": 22460,
+    "endMs": 23320,
+    "timestampMs": 22500,
+    "confidence": 0.999401
+  },
+  {
+    "text": " Those",
+    "startMs": 23320,
+    "endMs": 23690,
+    "timestampMs": 23600,
+    "confidence": 0.9996
+  },
+  {
+    "text": " with",
+    "startMs": 23690,
+    "endMs": 23990,
+    "timestampMs": 23900,
+    "confidence": 0.999699
+  },
+  {
+    "text": " strong",
+    "startMs": 23990,
+    "endMs": 24440,
+    "timestampMs": 24360,
+    "confidence": 0.999386
+  },
+  {
+    "text": " earth",
+    "startMs": 24440,
+    "endMs": 24810,
+    "timestampMs": 24700,
+    "confidence": 0.952635
+  },
+  {
+    "text": " or",
+    "startMs": 24810,
+    "endMs": 25070,
+    "timestampMs": 24920,
+    "confidence": 0.981938
+  },
+  {
+    "text": " fire",
+    "startMs": 25070,
+    "endMs": 25260,
+    "timestampMs": 25340,
+    "confidence": 0.999611
+  },
+  {
+    "text": " elements",
+    "startMs": 25260,
+    "endMs": 25900,
+    "timestampMs": 25860,
+    "confidence": 0.998571
+  },
+  {
+    "text": " in",
+    "startMs": 25900,
+    "endMs": 26010,
+    "timestampMs": 26060,
+    "confidence": 0.901062
+  },
+  {
+    "text": " their",
+    "startMs": 26010,
+    "endMs": 26290,
+    "timestampMs": 26260,
+    "confidence": 0.999512
+  },
+  {
+    "text": " charts",
+    "startMs": 26290,
+    "endMs": 26640,
+    "timestampMs": 26580,
+    "confidence": 0.999596
+  },
+  {
+    "text": " may",
+    "startMs": 26640,
+    "endMs": 26980,
+    "timestampMs": 26840,
+    "confidence": 0.923259
+  },
+  {
+    "text": " feel",
+    "startMs": 26980,
+    "endMs": 27200,
+    "timestampMs": 27120,
+    "confidence": 0.999672
+  },
+  {
+    "text": " a",
+    "startMs": 27200,
+    "endMs": 27280,
+    "timestampMs": 27400,
+    "confidence": 0.999626
+  },
+  {
+    "text": " surge",
+    "startMs": 27280,
+    "endMs": 27680,
+    "timestampMs": 27600,
+    "confidence": 0.997059
+  },
+  {
+    "text": " of",
+    "startMs": 27680,
+    "endMs": 27840,
+    "timestampMs": 27820,
+    "confidence": 0.99942
+  },
+  {
+    "text": " inspiration,",
+    "startMs": 27840,
+    "endMs": 28760,
+    "timestampMs": 28520,
+    "confidence": 0.999748
+  },
+  {
+    "text": " while",
+    "startMs": 28850,
+    "endMs": 29150,
+    "timestampMs": 29060,
+    "confidence": 0.998254
+  },
+  {
+    "text": " metal",
+    "startMs": 29150,
+    "endMs": 29540,
+    "timestampMs": 29500,
+    "confidence": 0.998506
+  },
+  {
+    "text": " or",
+    "startMs": 29540,
+    "endMs": 29700,
+    "timestampMs": 29820,
+    "confidence": 0.996588
+  },
+  {
+    "text": " wood",
+    "startMs": 29700,
+    "endMs": 30020,
+    "timestampMs": 30120,
+    "confidence": 0.999226
+  },
+  {
+    "text": " elements",
+    "startMs": 30020,
+    "endMs": 30730,
+    "timestampMs": 30640,
+    "confidence": 0.999603
+  },
+  {
+    "text": " could",
+    "startMs": 30730,
+    "endMs": 30960,
+    "timestampMs": 30880,
+    "confidence": 0.754411
+  },
+  {
+    "text": " experience",
+    "startMs": 30960,
+    "endMs": 31470,
+    "timestampMs": 31440,
+    "confidence": 0.997497
+  },
+  {
+    "text": " a",
+    "startMs": 31470,
+    "endMs": 31600,
+    "timestampMs": 31740,
+    "confidence": 0.811523
+  },
+  {
+    "text": " clash",
+    "startMs": 31600,
+    "endMs": 32040,
+    "timestampMs": 31940,
+    "confidence": 0.995866
+  },
+  {
+    "text": " with",
+    "startMs": 32040,
+    "endMs": 32320,
+    "timestampMs": 32240,
+    "confidence": 0.99987
+  },
+  {
+    "text": " this",
+    "startMs": 32320,
+    "endMs": 32600,
+    "timestampMs": 32460,
+    "confidence": 0.999401
+  },
+  {
+    "text": " water",
+    "startMs": 32600,
+    "endMs": 32950,
+    "timestampMs": 32780,
+    "confidence": 0.999428
+  },
+  {
+    "text": " energy,",
+    "startMs": 32950,
+    "endMs": 33400,
+    "timestampMs": 33280,
+    "confidence": 0.995258
+  },
+  {
+    "text": " prompting",
+    "startMs": 33400,
+    "endMs": 34050,
+    "timestampMs": 33820,
+    "confidence": 0.999603
+  },
+  {
+    "text": " a",
+    "startMs": 34050,
+    "endMs": 34120,
+    "timestampMs": 34060,
+    "confidence": 0.998731
+  },
+  {
+    "text": " need",
+    "startMs": 34120,
+    "endMs": 34440,
+    "timestampMs": 34300,
+    "confidence": 0.999817
+  },
+  {
+    "text": " for",
+    "startMs": 34440,
+    "endMs": 34620,
+    "timestampMs": 34580,
+    "confidence": 0.9996
+  },
+  {
+    "text": " balance",
+    "startMs": 34620,
+    "endMs": 35120,
+    "timestampMs": 34960,
+    "confidence": 0.998978
+  },
+  {
+    "text": " and",
+    "startMs": 35120,
+    "endMs": 35330,
+    "timestampMs": 35240,
+    "confidence": 0.987788
+  },
+  {
+    "text": " grounding.",
+    "startMs": 35330,
+    "endMs": 36240,
+    "timestampMs": 35720,
+    "confidence": 0.999485
+  },
+  {
+    "text": " It",
+    "startMs": 36240,
+    "endMs": 36380,
+    "timestampMs": 36400,
+    "confidence": 0.999039
+  },
+  {
+    "text": " is",
+    "startMs": 36380,
+    "endMs": 36520,
+    "timestampMs": 36580,
+    "confidence": 0.999569
+  },
+  {
+    "text": " advisable",
+    "startMs": 36520,
+    "endMs": 37160,
+    "timestampMs": 36980,
+    "confidence": 0.9991
+  },
+  {
+    "text": " to",
+    "startMs": 37160,
+    "endMs": 37300,
+    "timestampMs": 37340,
+    "confidence": 0.998982
+  },
+  {
+    "text": " engage",
+    "startMs": 37300,
+    "endMs": 37760,
+    "timestampMs": 37740,
+    "confidence": 0.999767
+  },
+  {
+    "text": " in",
+    "startMs": 37760,
+    "endMs": 37850,
+    "timestampMs": 37980,
+    "confidence": 0.990834
+  },
+  {
+    "text": " activities",
+    "startMs": 37850,
+    "endMs": 38600,
+    "timestampMs": 38500,
+    "confidence": 0.999481
+  },
+  {
+    "text": " that",
+    "startMs": 38600,
+    "endMs": 38910,
+    "timestampMs": 38780,
+    "confidence": 0.999935
+  },
+  {
+    "text": " require",
+    "startMs": 38910,
+    "endMs": 39460,
+    "timestampMs": 39200,
+    "confidence": 0.999565
+  },
+  {
+    "text": " adaptability",
+    "startMs": 39460,
+    "endMs": 40410,
+    "timestampMs": 39660,
+    "confidence": 0.999325
+  },
+  {
+    "text": " and",
+    "startMs": 40410,
+    "endMs": 40630,
+    "timestampMs": 40380,
+    "confidence": 0.997642
+  },
+  {
+    "text": " flexibility,",
+    "startMs": 40630,
+    "endMs": 41520,
+    "timestampMs": 41100,
+    "confidence": 0.999653
+  },
+  {
+    "text": " such",
+    "startMs": 41520,
+    "endMs": 41810,
+    "timestampMs": 41800,
+    "confidence": 0.999813
+  },
+  {
+    "text": " as",
+    "startMs": 41810,
+    "endMs": 41950,
+    "timestampMs": 42140,
+    "confidence": 0.999352
+  },
+  {
+    "text": " brainstorming",
+    "startMs": 41950,
+    "endMs": 42900,
+    "timestampMs": 42500,
+    "confidence": 0.988203
+  },
+  {
+    "text": " sessions",
+    "startMs": 42900,
+    "endMs": 43520,
+    "timestampMs": 43440,
+    "confidence": 0.999436
+  },
+  {
+    "text": " or",
+    "startMs": 43520,
+    "endMs": 43740,
+    "timestampMs": 43700,
+    "confidence": 0.999866
+  },
+  {
+    "text": " problem-solving",
+    "startMs": 43740,
+    "endMs": 44630,
+    "timestampMs": 44140,
+    "confidence": 0.999112
+  },
+  {
+    "text": " discussions.",
+    "startMs": 44630,
+    "endMs": 45600,
+    "timestampMs": 45400,
+    "confidence": 0.999157
+  },
+  {
+    "text": " Conversely,",
+    "startMs": 45600,
+    "endMs": 48340,
+    "timestampMs": 47560,
+    "confidence": 0.996715
+  },
+  {
+    "text": " avoid",
+    "startMs": 48340,
+    "endMs": 48640,
+    "timestampMs": 48640,
+    "confidence": 0.972735
+  },
+  {
+    "text": " confrontations",
+    "startMs": 48640,
+    "endMs": 49680,
+    "timestampMs": 49080,
+    "confidence": 0.999302
+  },
+  {
+    "text": " or",
+    "startMs": 49680,
+    "endMs": 49810,
+    "timestampMs": 49880,
+    "confidence": 0.93248
+  },
+  {
+    "text": " rigid",
+    "startMs": 49810,
+    "endMs": 50190,
+    "timestampMs": 50140,
+    "confidence": 0.999112
+  },
+  {
+    "text": " structures",
+    "startMs": 50190,
+    "endMs": 50840,
+    "timestampMs": 50700,
+    "confidence": 0.999554
+  },
+  {
+    "text": " that",
+    "startMs": 50840,
+    "endMs": 51120,
+    "timestampMs": 51020,
+    "confidence": 0.999935
+  },
+  {
+    "text": " may",
+    "startMs": 51120,
+    "endMs": 51370,
+    "timestampMs": 51200,
+    "confidence": 0.999115
+  },
+  {
+    "text": " stifle",
+    "startMs": 51370,
+    "endMs": 51750,
+    "timestampMs": 51480,
+    "confidence": 0.999748
+  },
+  {
+    "text": " your",
+    "startMs": 51750,
+    "endMs": 52030,
+    "timestampMs": 51920,
+    "confidence": 0.999664
+  },
+  {
+    "text": " natural",
+    "startMs": 52030,
+    "endMs": 52530,
+    "timestampMs": 52360,
+    "confidence": 0.999706
+  },
+  {
+    "text": " flow.",
+    "startMs": 52530,
+    "endMs": 53080,
+    "timestampMs": 52880,
+    "confidence": 0.999851
+  },
+  {
+    "text": " Themes",
+    "startMs": 53080,
+    "endMs": 53660,
+    "timestampMs": 54180,
+    "confidence": 0.990593
+  },
+  {
+    "text": " of",
+    "startMs": 53660,
+    "endMs": 54060,
+    "timestampMs": 54520,
+    "confidence": 0.999752
+  },
+  {
+    "text": " abundance",
+    "startMs": 54060,
+    "endMs": 54680,
+    "timestampMs": 54940,
+    "confidence": 0.995809
+  },
+  {
+    "text": " and",
+    "startMs": 54680,
+    "endMs": 54960,
+    "timestampMs": 55240,
+    "confidence": 0.99437
+  },
+  {
+    "text": " opportunity",
+    "startMs": 54960,
+    "endMs": 56050,
+    "timestampMs": 55880,
+    "confidence": 0.999569
+  },
+  {
+    "text": " are",
+    "startMs": 56050,
+    "endMs": 56250,
+    "timestampMs": 56300,
+    "confidence": 0.924628
+  },
+  {
+    "text": " highlighted",
+    "startMs": 56250,
+    "endMs": 57060,
+    "timestampMs": 56720,
+    "confidence": 0.999897
+  },
+  {
+    "text": " today,",
+    "startMs": 57060,
+    "endMs": 57400,
+    "timestampMs": 57300,
+    "confidence": 0.998727
+  },
+  {
+    "text": " making",
+    "startMs": 57440,
+    "endMs": 57850,
+    "timestampMs": 57760,
+    "confidence": 0.999687
+  },
+  {
+    "text": " it",
+    "startMs": 57850,
+    "endMs": 58100,
+    "timestampMs": 58060,
+    "confidence": 0.999653
+  },
+  {
+    "text": " an",
+    "startMs": 58100,
+    "endMs": 58150,
+    "timestampMs": 58240,
+    "confidence": 0.998818
+  },
+  {
+    "text": " auspicious",
+    "startMs": 58150,
+    "endMs": 58930,
+    "timestampMs": 58620,
+    "confidence": 0.999157
+  },
+  {
+    "text": " time",
+    "startMs": 58930,
+    "endMs": 59290,
+    "timestampMs": 59180,
+    "confidence": 0.999653
+  },
+  {
+    "text": " for",
+    "startMs": 59290,
+    "endMs": 59440,
+    "timestampMs": 59420,
+    "confidence": 0.788411
+  },
+  {
+    "text": " networking",
+    "startMs": 59440,
+    "endMs": 60120,
+    "timestampMs": 59920,
+    "confidence": 0.999458
+  },
+  {
+    "text": " and",
+    "startMs": 60120,
+    "endMs": 60420,
+    "timestampMs": 60320,
+    "confidence": 0.999947
+  },
+  {
+    "text": " forming",
+    "startMs": 60420,
+    "endMs": 60920,
+    "timestampMs": 60720,
+    "confidence": 0.999226
+  },
+  {
+    "text": " connections.",
+    "startMs": 60920,
+    "endMs": 62040,
+    "timestampMs": 61440,
+    "confidence": 0.999668
+  },
+  {
+    "text": " Let",
+    "startMs": 62040,
+    "endMs": 62340,
+    "timestampMs": 62260,
+    "confidence": 0.999676
+  },
+  {
+    "text": " the",
+    "startMs": 62340,
+    "endMs": 62480,
+    "timestampMs": 62480,
+    "confidence": 0.998993
+  },
+  {
+    "text": " steady",
+    "startMs": 62480,
+    "endMs": 62940,
+    "timestampMs": 62840,
+    "confidence": 0.998412
+  },
+  {
+    "text": " flow",
+    "startMs": 62940,
+    "endMs": 63210,
+    "timestampMs": 63120,
+    "confidence": 0.999706
+  },
+  {
+    "text": " of",
+    "startMs": 63210,
+    "endMs": 63350,
+    "timestampMs": 63360,
+    "confidence": 0.999756
+  },
+  {
+    "text": " water",
+    "startMs": 63350,
+    "endMs": 63720,
+    "timestampMs": 63600,
+    "confidence": 0.999535
+  },
+  {
+    "text": " guide",
+    "startMs": 63720,
+    "endMs": 64070,
+    "timestampMs": 63920,
+    "confidence": 0.995573
+  },
+  {
+    "text": " your",
+    "startMs": 64070,
+    "endMs": 64360,
+    "timestampMs": 64200,
+    "confidence": 0.999493
+  },
+  {
+    "text": " words",
+    "startMs": 64360,
+    "endMs": 64720,
+    "timestampMs": 64600,
+    "confidence": 0.997851
+  },
+  {
+    "text": " today.",
+    "startMs": 64720,
+    "endMs": 65360,
+    "timestampMs": 65120,
+    "confidence": 0.997733
+  }
+]

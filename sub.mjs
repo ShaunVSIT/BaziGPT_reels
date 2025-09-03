@@ -29,14 +29,7 @@ const extractToTempAudioFile = (fileToTranscribe, tempOutFile) => {
   );
 };
 
-const subFile = async (filePath, fileName, folder) => {
-  const outPath = path.join(
-    process.cwd(),
-    "public",
-    folder,
-    fileName.replace(".wav", ".json"),
-  );
-
+const subFile = async (filePath, outJsonPath) => {
   const whisperCppOutput = await transcribe({
     inputPath: filePath,
     model: WHISPER_MODEL,
@@ -52,13 +45,10 @@ const subFile = async (filePath, fileName, folder) => {
   const { captions } = toCaptions({
     whisperCppOutput,
   });
-  writeFileSync(
-    outPath.replace("webcam", "subs"),
-    JSON.stringify(captions, null, 2),
-  );
+  writeFileSync(outJsonPath, JSON.stringify(captions, null, 2));
 };
 
-const processVideo = async (fullPath, entry, directory) => {
+const processVideo = async (fullPath, entry, directory, force = false) => {
   if (
     !fullPath.endsWith(".mp4") &&
     !fullPath.endsWith(".webm") &&
@@ -68,15 +58,14 @@ const processVideo = async (fullPath, entry, directory) => {
     return;
   }
 
-  const isTranscribed = existsSync(
-    fullPath
-      .replace(/.mp4$/, ".json")
-      .replace(/.mkv$/, ".json")
-      .replace(/.mov$/, ".json")
-      .replace(/.webm$/, ".json")
-      .replace("webcam", "subs"),
-  );
-  if (isTranscribed) {
+  const outJsonPath = fullPath
+    .replace(/\.mp4$/, ".json")
+    .replace(/\.mkv$/, ".json")
+    .replace(/\.mov$/, ".json")
+    .replace(/\.webm$/, ".json");
+
+  const isTranscribed = existsSync(outJsonPath);
+  if (isTranscribed && !force) {
     return;
   }
   let shouldRemoveTempDirectory = false;
@@ -90,11 +79,54 @@ const processVideo = async (fullPath, entry, directory) => {
   const tempOutFilePath = path.join(process.cwd(), `temp/${tempWavFileName}`);
 
   extractToTempAudioFile(fullPath, tempOutFilePath);
-  await subFile(
-    tempOutFilePath,
-    tempWavFileName,
-    path.relative("public", directory),
-  );
+  await subFile(tempOutFilePath, outJsonPath);
+  if (shouldRemoveTempDirectory) {
+    rmSync(path.join(process.cwd(), "temp"), { recursive: true });
+  }
+};
+
+const processAudio = async (fullPath, entry, directory, force = false) => {
+  if (
+    !fullPath.endsWith(".mp3") &&
+    !fullPath.endsWith(".wav") &&
+    !fullPath.endsWith(".m4a") &&
+    !fullPath.endsWith(".aac") &&
+    !fullPath.endsWith(".flac") &&
+    !fullPath.endsWith(".ogg")
+  ) {
+    return;
+  }
+
+  const outJsonPath = fullPath
+    .replace(/\.mp3$/, ".json")
+    .replace(/\.wav$/, ".json")
+    .replace(/\.m4a$/, ".json")
+    .replace(/\.aac$/, ".json")
+    .replace(/\.flac$/, ".json")
+    .replace(/\.ogg$/, ".json");
+
+  const isTranscribed = existsSync(outJsonPath);
+  if (isTranscribed && !force) {
+    return;
+  }
+
+  let shouldRemoveTempDirectory = false;
+  if (!existsSync(path.join(process.cwd(), "temp"))) {
+    mkdirSync(`temp`);
+    shouldRemoveTempDirectory = true;
+  }
+
+  console.log("Preparing audio for transcription", entry);
+
+  const baseName = entry.split(".")[0];
+  const tempWavFileName = baseName + ".wav";
+  const tempOutFilePath = path.join(process.cwd(), `temp/${tempWavFileName}`);
+
+  // Convert to 16kHz WAV for better alignment
+  extractToTempAudioFile(fullPath, tempOutFilePath);
+
+  await subFile(tempOutFilePath, outJsonPath);
+
   if (shouldRemoveTempDirectory) {
     rmSync(path.join(process.cwd(), "temp"), { recursive: true });
   }
@@ -110,7 +142,24 @@ const processDirectory = async (directory) => {
     if (stat.isDirectory()) {
       await processDirectory(fullPath); // Recurse into subdirectories
     } else {
-      await processVideo(fullPath, entry, directory);
+      // Decide based on file extension whether to treat as video or audio
+      if (
+        fullPath.endsWith(".mp4") ||
+        fullPath.endsWith(".webm") ||
+        fullPath.endsWith(".mkv") ||
+        fullPath.endsWith(".mov")
+      ) {
+        await processVideo(fullPath, entry, directory);
+      } else if (
+        fullPath.endsWith(".mp3") ||
+        fullPath.endsWith(".wav") ||
+        fullPath.endsWith(".m4a") ||
+        fullPath.endsWith(".aac") ||
+        fullPath.endsWith(".flac") ||
+        fullPath.endsWith(".ogg")
+      ) {
+        await processAudio(fullPath, entry, directory);
+      }
     }
   }
 };
@@ -127,7 +176,7 @@ if (!hasArgs) {
 }
 
 for (const arg of process.argv.slice(2)) {
-  const fullPath = path.join(process.cwd(), arg);
+  const fullPath = path.isAbsolute(arg) ? arg : path.join(process.cwd(), arg);
   const stat = lstatSync(fullPath);
 
   if (stat.isDirectory()) {
@@ -138,5 +187,23 @@ for (const arg of process.argv.slice(2)) {
   console.log(`Processing file ${fullPath}`);
   const directory = path.dirname(fullPath);
   const fileName = path.basename(fullPath);
-  await processVideo(fullPath, fileName, directory);
+  if (
+    fullPath.endsWith(".mp4") ||
+    fullPath.endsWith(".webm") ||
+    fullPath.endsWith(".mkv") ||
+    fullPath.endsWith(".mov")
+  ) {
+    await processVideo(fullPath, fileName, directory, true);
+  } else if (
+    fullPath.endsWith(".mp3") ||
+    fullPath.endsWith(".wav") ||
+    fullPath.endsWith(".m4a") ||
+    fullPath.endsWith(".aac") ||
+    fullPath.endsWith(".flac") ||
+    fullPath.endsWith(".ogg")
+  ) {
+    await processAudio(fullPath, fileName, directory, true);
+  } else {
+    console.log("Skipping unsupported file type", fileName);
+  }
 }

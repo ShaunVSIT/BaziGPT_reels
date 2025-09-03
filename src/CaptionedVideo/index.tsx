@@ -108,14 +108,21 @@ export const CaptionedVideo: React.FC<{
         />
       </AbsoluteFill>
       {pages.map((page, index) => {
+        // Safety checks to prevent NaN values
+        if (!page || typeof page.startMs !== 'number' || !Number.isFinite(page.startMs) || !fps || fps <= 0) {
+          return null;
+        }
+
         const nextPage = pages[index + 1] ?? null;
         const subtitleStartFrame = (page.startMs / 1000) * fps;
         const subtitleEndFrame = Math.min(
-          nextPage ? (nextPage.startMs / 1000) * fps : Infinity,
-          subtitleStartFrame + SWITCH_CAPTIONS_EVERY_MS,
+          nextPage && Number.isFinite(nextPage.startMs) ? (nextPage.startMs / 1000) * fps : Infinity,
+          subtitleStartFrame + (SWITCH_CAPTIONS_EVERY_MS / 1000) * fps,
         );
         const durationInFrames = subtitleEndFrame - subtitleStartFrame;
-        if (durationInFrames <= 0) {
+
+        // Additional safety check for valid frame values
+        if (!Number.isFinite(subtitleStartFrame) || !Number.isFinite(durationInFrames) || durationInFrames <= 0) {
           return null;
         }
 
@@ -125,7 +132,7 @@ export const CaptionedVideo: React.FC<{
             from={subtitleStartFrame}
             durationInFrames={durationInFrames}
           >
-            <SubtitlePage key={index} page={page} />;
+            <SubtitlePage key={index} page={page} />
           </Sequence>
         );
       })}

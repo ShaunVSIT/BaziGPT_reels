@@ -1,25 +1,29 @@
 import "./index.css";
 import { Composition, staticFile } from "remotion";
+// Removed CaptionedVideo - only using BaziReel
 import {
-  CaptionedVideo,
-  calculateCaptionedVideoMetadata,
-  captionedVideoSchema,
-} from "./CaptionedVideo";
+  BaziReel,
+  calculateBaziReelMetadata,
+  baziReelSchema,
+} from "./BaziReel";
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
   return (
-    <Composition
-      id="CaptionedVideo"
-      component={CaptionedVideo}
-      calculateMetadata={calculateCaptionedVideoMetadata}
-      schema={captionedVideoSchema}
-      width={1080}
-      height={1920}
-      defaultProps={{
-        src: staticFile("sample-video.mp4"),
-      }}
-    />
+    <>
+      <Composition
+        id="BaziReel"
+        component={BaziReel}
+        calculateMetadata={calculateBaziReelMetadata}
+        schema={baziReelSchema}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          audioSrc: staticFile("bazi-audio.mp3"),
+          backgroundSrc: staticFile("bg-extended.mp4"),
+        }}
+      />
+    </>
   );
 };

@@ -1,0 +1,69 @@
+name: Daily Bazi Reel
+
+on:
+  schedule:
+    - cron: "0 12 * * *" # Daily at 12:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  build-render-upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NODE_ENV: production
+      # Secrets required
+      OPENAI_TTS_KEY: ${{ secrets.OPENAI_TTS_KEY }}
+      FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+      FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+      # Optional: If you host the daily API behind auth or a custom URL
+      BAZIGPT_API_URL: ${{ secrets.BAZIGPT_API_URL }}
+      # Render automatically during generation
+      AUTO_RENDER: "true"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Cache Whisper (repo + model)
+        uses: actions/cache@v4
+        with:
+          path: |
+            whisper.cpp
+          key: whisper-${{ runner.os }}-v1-small.en
+
+      - name: Cache Remotion Chrome
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/remotion
+          key: remotion-chrome-${{ runner.os }}-v1
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline
+
+      - name: Use smaller Whisper model for CI speed
+        run: sed -i 's/WHISPER_MODEL = "medium.en"/WHISPER_MODEL = "small.en"/' whisper-config.mjs
+
+      - name: Generate + render reel
+        run: node scripts/generateReel.js --render
+
+      - name: Upload video artifact (backup)
+        uses: actions/upload-artifact@v4
+        with:
+          name: bazi-reel
+          path: output/bazi-reel.mp4
+
+      - name: Upload to Facebook Reels
+        run: node scripts/uploadFacebook.js
+
+      - name: Done
+        run: echo "✅ Daily reel generated, rendered, and uploaded."
+
+

@@ -14,9 +14,12 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "remotion": "4.0.341",
-    "zod": "3.22.3",
+    "zod": "^3.23.8",
     "@remotion/tailwind-v4": "4.0.341",
-    "tailwindcss": "4.0.0"
+    "tailwindcss": "4.0.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "openai": "^5.18.1"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.341",
@@ -33,7 +36,11 @@
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
-    "create-subtitles": "node sub.mjs"
+    "create-subtitles": "node sub.mjs",
+    "generate-reel": "node scripts/generateReel.js",
+    "extend-bg": "node scripts/extendBgVideo.js",
+    "render-reel": "remotion render src/index.ts BaziReel output/bazi-reel.mp4",
+    "upload-facebook": "node scripts/uploadFacebook.js"
   },
   "sideEffects": [
     "*.css"
