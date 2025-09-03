@@ -15,8 +15,7 @@ jobs:
       OPENAI_TTS_KEY: ${{ secrets.OPENAI_TTS_KEY }}
       FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
       FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
-      # Optional: If you host the daily API behind auth or a custom URL
-      BAZIGPT_API_URL: ${{ secrets.BAZIGPT_API_URL }}
+  
       # Render automatically during generation
       AUTO_RENDER: "true"
     steps:
