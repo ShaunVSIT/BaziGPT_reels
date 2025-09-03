@@ -61,22 +61,24 @@ export const BaziBranding: React.FC<BaziBrandingProps> = ({ metadata }) => {
     return (
         <>
             {/* Main Logo/Brand */}
-            <AbsoluteFill
-                style={{
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                    paddingTop: 80,
-                }}
-            >
+            <AbsoluteFill style={{ justifyContent: "flex-start", alignItems: "center" }}>
                 <div
                     style={{
-                        transform: `scale(${logoScale})`,
+                        position: "absolute",
+                        top: "12%", // Push below Facebook UI overlays
+                        left: "50%",
+                        transform: `translateX(-50%) scale(${logoScale})`,
                         opacity: logoOpacity,
                         background: `linear-gradient(135deg, #FF8C00 0%, #FFA500 50%, #FF8C00 100%)`,
-                        padding: "24px 48px",
+                        padding: "18px 36px",
                         borderRadius: "40px",
+                        width: "85%",
+                        maxWidth: 980,
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
                         fontFamily: "Arial Black, sans-serif",
-                        fontSize: 48,
+                        fontSize: 44,
                         fontWeight: "900",
                         color: "white",
                         textAlign: "center",
@@ -92,22 +94,24 @@ export const BaziBranding: React.FC<BaziBrandingProps> = ({ metadata }) => {
 
             {/* Pillar Information */}
             {metadata?.pillar && (
-                <AbsoluteFill
-                    style={{
-                        justifyContent: "flex-start",
-                        alignItems: "center",
-                        paddingTop: 180, // Reduced to give more space for captions
-                    }}
-                >
+                <AbsoluteFill style={{ justifyContent: "flex-start", alignItems: "center" }}>
                     <div
                         style={{
+                            position: "absolute",
+                            top: "17%", // Below the main logo and still above captions
+                            left: "50%",
+                            transform: `translateX(-50%) translateY(${pillarY}px)`,
                             opacity: pillarOpacity,
-                            transform: `translateY(${pillarY}px)`,
                             backgroundColor: "rgba(0, 0, 0, 0.8)",
-                            padding: "16px 32px",
+                            padding: "12px 24px",
                             borderRadius: "25px",
+                            width: "85%",
+                            maxWidth: 980,
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
                             fontFamily: "Arial, sans-serif",
-                            fontSize: 36,
+                            fontSize: 42,
                             fontWeight: "700",
                             color: "#FF8C00",
                             textAlign: "center",
@@ -132,7 +136,7 @@ export const BaziBranding: React.FC<BaziBrandingProps> = ({ metadata }) => {
                     <div
                         style={{
                             position: "absolute",
-                            top: "85%",
+                            top: "75%",
                             left: "50%",
                             transform: "translate(-50%, 0)",
                             zIndex: 10,
@@ -152,6 +156,43 @@ export const BaziBranding: React.FC<BaziBrandingProps> = ({ metadata }) => {
                             day: 'numeric',
                             year: 'numeric'
                         })}
+                    </div>
+
+                    {/* Logo + watermark below date */}
+                    <div
+                        style={{
+                            position: "absolute",
+                            top: "82%",
+                            left: "50%",
+                            transform: "translateX(-50%)",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 14,
+                            backgroundColor: "rgba(0,0,0,0.6)",
+                            padding: "8px 14px",
+                            borderRadius: 14,
+                            border: "1px solid rgba(255,255,255,0.15)",
+                            backdropFilter: "blur(6px)",
+                            WebkitBackdropFilter: "blur(6px)",
+                        }}
+                    >
+                        <img
+                            src={require('../../public/bazigpt.png')}
+                            alt="BaziGPT"
+                            style={{ width: 44, height: 44, borderRadius: 8 }}
+                        />
+                        <span
+                            style={{
+                                fontFamily: 'Arial Black, sans-serif',
+                                fontWeight: 900,
+                                fontSize: 28,
+                                letterSpacing: 0.2,
+                                color: 'white',
+                                textShadow: '0 2px 6px rgba(0,0,0,0.7)'
+                            }}
+                        >
+                            bazigpt.io
+                        </span>
                     </div>
                 </AbsoluteFill>
             )}

@@ -45,7 +45,19 @@ const subFile = async (filePath, outJsonPath) => {
   const { captions } = toCaptions({
     whisperCppOutput,
   });
-  writeFileSync(outJsonPath, JSON.stringify(captions, null, 2));
+
+  // Brand term corrections to fix common mis-transcriptions (e.g., "bazzi" -> "Bazi")
+  const corrected = (captions || []).map((c) => {
+    const txt = typeof c.text === 'string' ? c.text : '';
+    const fixed = txt
+      .replace(/bazzi/gi, 'Bazi')
+      .replace(/bazzy/gi, 'Bazi')
+      .replace(/bazi/gi, (m) => 'Bazi'); // normalize casing
+
+    return fixed === txt ? c : { ...c, text: fixed };
+  });
+
+  writeFileSync(outJsonPath, JSON.stringify(corrected, null, 2));
 };
 
 const processVideo = async (fullPath, entry, directory, force = false) => {

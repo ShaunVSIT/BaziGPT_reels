@@ -62,11 +62,11 @@ export const BaziSubtitlePage: React.FC<BaziSubtitlePageProps> = ({ page }) => {
             <div
                 style={{
                     position: "absolute",
-                    top: "45%", // Slightly higher to avoid date badge
-                    left: "50%",
+                    top: "48%", // Ensure no overlap with top branding
+                    left: "53%",
                     transform: "translate(-50%, -50%)",
-                    width: "90%",
-                    maxWidth: "700px", // Slightly smaller to prevent overflow
+                    width: "94%",
+                    maxWidth: 1040,
                 }}
             >
                 <div
@@ -74,14 +74,14 @@ export const BaziSubtitlePage: React.FC<BaziSubtitlePageProps> = ({ page }) => {
                         transform: `scale(${scale})`,
                         opacity,
                         textAlign: "center",
-                        maxWidth: "95%",
+                        width: "95%",
                         maxHeight: "100%",
                         display: "flex",
                         flexWrap: "wrap",
                         justifyContent: "center",
                         alignItems: "center",
-                        lineHeight: 1.4,
-                        gap: "8px",
+                        lineHeight: 1.35,
+                        gap: "6px",
                         overflow: "hidden",
                         minHeight: "120px", // Ensure consistent height for chunks
                     }}
@@ -123,7 +123,7 @@ export const BaziSubtitlePage: React.FC<BaziSubtitlePageProps> = ({ page }) => {
                                 key={`${tokenStartMs}-${index}`}
                                 style={{
                                     display: "inline-block",
-                                    margin: "3px 5px",
+                                    margin: "2px 4px",
                                     transform: `scale(${wordScale})`,
                                     opacity: wordOpacity,
                                     fontSize: 52, // Slightly larger for better readability

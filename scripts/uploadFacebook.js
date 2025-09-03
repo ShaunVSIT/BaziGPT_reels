@@ -20,10 +20,9 @@ function readCaption() {
         const json = JSON.parse(fs.readFileSync(METADATA_FILE, 'utf8'));
         const date = json.date || new Date().toISOString().split('T')[0];
         const pillar = json.pillar ? `Bazi Pillar: ${json.pillar}\n\n` : '';
-        const link = 'https://www.bazigpt.io/daily';
-        return `Daily Bazi Reading - ${date}\n${pillar}Read more: ${link}`;
+        return `Daily Bazi Reading — ${date}\n${pillar}More on our page`;
     } catch {
-        return `Daily Bazi Reading - ${new Date().toISOString().split('T')[0]}\nRead more: https://www.bazigpt.io/daily`;
+        return `Daily Bazi Reading — ${new Date().toISOString().split('T')[0]}\nMore on our page`;
     }
 }
 
@@ -116,5 +115,3 @@ if (require.main === module) {
 }
 
 module.exports = { uploadReel };
-
-
