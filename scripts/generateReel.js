@@ -71,11 +71,19 @@ async function fetchDailyReading() {
     console.log('🌐 Fetching daily reading from API...');
 
     try {
-        const response = await axios.get(DAILY_READING_URL, {
+        const client = axios.create();
+        const response = await client.get(DAILY_READING_URL, {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-            },
-            timeout: 10000
+            }
+        }).catch(async (err) => {
+            console.warn('⏳ API request failed, retrying once in 2s...', err.message);
+            await new Promise(r => setTimeout(r, 2000));
+            return client.get(DAILY_READING_URL, {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                }
+            });
         });
 
         if (response.status !== 200) {
