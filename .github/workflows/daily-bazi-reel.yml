@@ -32,21 +32,13 @@ jobs:
       - name: Install ffmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      - name: Cache Whisper (repo + model)
-        uses: actions/cache@v4
-        with:
-          path: |
-            whisper.cpp
-          key: whisper-${{ runner.os }}-v1-small.en
-
-      - name: Cache Remotion Chrome
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/remotion
-          key: remotion-chrome-${{ runner.os }}-v1
+      # Avoid persistent caches to stay within free storage limits
 
       - name: Install dependencies
-        run: npm ci --prefer-offline
+        run: |
+          npm config set fund false
+          npm config set audit false
+          npm install --prefer-offline --no-audit --no-fund --legacy-peer-deps
 
       - name: Use smaller Whisper model for CI speed
         run: sed -i 's/WHISPER_MODEL = "medium.en"/WHISPER_MODEL = "small.en"/' whisper-config.mjs
@@ -54,11 +46,7 @@ jobs:
       - name: Generate + render reel
         run: node scripts/generateReel.js --render
 
-      - name: Upload video artifact (backup)
-        uses: actions/upload-artifact@v4
-        with:
-          name: bazi-reel
-          path: output/bazi-reel.mp4
+      # Do not upload artifacts to avoid storage usage on free tier
 
       - name: Upload to Facebook Reels
         run: node scripts/uploadFacebook.js
