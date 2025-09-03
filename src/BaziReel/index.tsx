@@ -21,6 +21,7 @@ import { loadFont } from "../load-font";
 import { Caption } from "@remotion/captions";
 import { BaziSubtitlePage } from "./BaziSubtitlePage";
 import { BaziBranding } from "./BaziBranding";
+import { BaziEndCard } from "./BaziEndCard";
 
 export const baziReelSchema = z.object({
     audioSrc: z.string(),
@@ -32,10 +33,11 @@ export const calculateBaziReelMetadata: CalculateMetadataFunction<
 > = async ({ props }) => {
     const fps = 30;
     const durationInSeconds = await getAudioDurationInSeconds(props.audioSrc);
+    const END_CARD_SECONDS = 3;
 
     return {
         fps,
-        durationInFrames: Math.floor(durationInSeconds * fps),
+        durationInFrames: Math.floor(durationInSeconds * fps) + Math.floor(END_CARD_SECONDS * fps),
     };
 };
 
@@ -57,6 +59,8 @@ export const BaziReel: React.FC<{
     const [metadata, setMetadata] = useState<any>(null);
     const [handle] = useState(() => delayRender());
     const { fps, durationInFrames } = useVideoConfig();
+    const END_CARD_SECONDS = 3;
+    const endCardFrames = Math.floor((END_CARD_SECONDS || 0) * (fps || 30));
     const frame = useCurrentFrame();
 
     const subtitlesFile = audioSrc
@@ -116,7 +120,9 @@ export const BaziReel: React.FC<{
     // Scale captions to match actual audio duration to prevent drift while keeping custom chunking
     const scaledSubtitles: Caption[] = useMemo(() => {
         if (!subtitles || subtitles.length === 0 || !fps) return subtitles;
-        const totalAudioMs = (durationInFrames / fps) * 1000;
+        // Exclude end card tail from caption scaling
+        const effectiveFrames = Math.max(0, durationInFrames - endCardFrames);
+        const totalAudioMs = (effectiveFrames / fps) * 1000;
         const lastEndMs = subtitles[subtitles.length - 1]?.endMs ?? 0;
 
         if (!Number.isFinite(totalAudioMs) || !Number.isFinite(lastEndMs) || lastEndMs <= 0) {
@@ -139,7 +145,7 @@ export const BaziReel: React.FC<{
 
         console.log('Applied caption time scaling', { scale, totalAudioMs, lastEndMs });
         return result;
-    }, [subtitles, fps, durationInFrames]);
+    }, [subtitles, fps, durationInFrames, endCardFrames]);
 
     const pages = useMemo(() => {
         const source = scaledSubtitles;
@@ -272,6 +278,16 @@ export const BaziReel: React.FC<{
 
             {/* Audio */}
             <Audio src={audioSrc} />
+
+            {/* End Card - static CTA at the end */}
+            {Number.isFinite(durationInFrames) && endCardFrames > 0 && (
+                <Sequence
+                    from={Math.max(0, durationInFrames - endCardFrames)}
+                    durationInFrames={endCardFrames}
+                >
+                    <BaziEndCard />
+                </Sequence>
+            )}
 
             {/* No Caption File Warning */}
             {!getFileExists(subtitlesFile) && (
