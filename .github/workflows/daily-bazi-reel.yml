@@ -2,7 +2,7 @@ name: Daily Bazi Reel
 
 on:
   schedule:
-    - cron: "15 0 * * *" # Daily at 12:00 UTC
+    - cron: "00 15 * * *" # Daily at 12:00 UTC
   workflow_dispatch: {}
 
 jobs:
