@@ -20,7 +20,8 @@
     "tailwindcss": "4.0.0",
     "axios": "^1.6.0",
     "dotenv": "^16.3.1",
-    "openai": "^5.18.1"
+    "openai": "^5.18.1",
+    "twitter-api-v2": "^1.16.0"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.341",
@@ -40,7 +41,8 @@
     "generate-reel": "node scripts/generateReel.js",
     "extend-bg": "node scripts/extendBgVideo.js",
     "render-reel": "remotion render src/index.ts BaziReel output/bazi-reel.mp4",
-    "upload-facebook": "node scripts/uploadFacebook.js"
+    "upload-facebook": "node scripts/uploadFacebook.js",
+    "upload-twitter": "node scripts/uploadTwitter.js"
   },
   "sideEffects": [
     "*.css"
