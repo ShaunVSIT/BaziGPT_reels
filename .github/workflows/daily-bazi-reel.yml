@@ -39,9 +39,6 @@ jobs:
           npm config set audit false
           npm install --prefer-offline --no-audit --no-fund --legacy-peer-deps
 
-      - name: Use smaller Whisper model for CI speed
-        run: sed -i 's/WHISPER_MODEL = "medium.en"/WHISPER_MODEL = "small.en"/' whisper-config.mjs
-
       - name: Generate + render reel
         run: node scripts/generateReel.js --render
 
